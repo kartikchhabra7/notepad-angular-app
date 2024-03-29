@@ -1,5 +1,9 @@
 # Notepad App
 
+**It is Build with** &nbsp;
+[![Angular](https://img.shields.io/badge/-Angular-red?style=flat&logo=angular&logoColor=white)](https://angular.io/) &nbsp;&nbsp;&nbsp;&nbsp;
+![TypeScript](https://img.shields.io/badge/-TypeScript-blue?style=flat&logo=typescript&logoColor=white)
+
 ## Overview
 The Notepad App is a simple and user-friendly note-taking application that allows users to create, edit, and manage their notes effectively. It provides various features to enhance the note-taking experience, including font customization, text styling, and easy export options.
 
