@@ -1,0 +1,40 @@
+textarea.form-control:focus {
+  // outline: none;
+  // border-color: transparent;
+  box-shadow: none;
+}
+.form-control {
+  border-color: #202124;
+}
+
+.form-control::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.toast {
+  position: fixed;
+  top: 10px;
+  right: 10px; 
+  background-color: teal;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  z-index: 9999;
+  transition: transform 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toast.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+@media print {
+  .hide-on-print {
+    display: none !important; 
+  }
+}
