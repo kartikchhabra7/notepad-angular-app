@@ -22,6 +22,10 @@ The Notepad App is a simple and user-friendly note-taking application that allow
 - **Print Button**: Print your notes directly from the app.
 - **Download Button**: Export notes as a text file for easy sharing and backup.
 
+### Local Storage Integration
+- **Automatic Data Saving**: Your notes are automatically saved in the browser's local storage, ensuring you never lose your work, even if you close or refresh the page.
+- **Persistent Styling Preferences**: Font size, font family, and text styling preferences are stored in local storage, allowing you to resume where you left off with your customized settings.
+
 ## Usage
 1. Open the Notepad App in your web browser.
 2. Use the font size dropdown to adjust text size.
@@ -35,18 +39,11 @@ The Notepad App is a simple and user-friendly note-taking application that allow
 No installation required. Simply access the Notepad App by clicking [**here**](https://kartik-notepad.netlify.app/).
 
 ## Compatibility
-The Notepad App is designed to be responsive and compatible with all devices
+The Notepad App is designed to be responsive and compatible with all devices.
 
 ### Clone the Repository
 
 ```bash
 - Clone the Repository with git clone or direct download the zip file
-
 - npm install
-
--  Access the application on your local server at http://           
-localhost:4200/
-```
-
-## Feedback and Support
-For any questions, feedback, or support requests, please contact [kartikchhabra026@gmail.com](mailto:email@example.com).
+- Access the application on your local server at http://localhost:4200/
