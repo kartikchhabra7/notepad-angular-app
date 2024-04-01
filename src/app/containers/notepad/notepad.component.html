@@ -1,103 +1,115 @@
+<header class="title-head">
+  <h6 class="text-center title">Online Notepad</h6>
+  <hr class="hr-line" />
+</header>
 <div class="container-fluid">
-  <div class="toast" [ngClass]="{'show': isCopied}">
-    Copied to ClipBoard
-  </div>
-<div class="container-fluid ">
-  <div class="row justify-content-center mt-4">
-    <div class="col-md-8">
-      <div class="d-flex align-items-center justify-content-between mb-3">
-        <div class="d-flex hide-on-print">
-          <select class="form-select me-2" [(ngModel)]="fontSize">
-            <option value="" selected disabled>Font Size</option>
+  <div class="toast" [ngClass]="{ show: isCopied }">Copied to ClipBoard</div>
+  <div class="container-fluid">
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-8">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div class="d-flex hide-on-print">
+            <select
+              class="form-select me-2"
+              [(ngModel)]="fontSize"
+              (change)="handleFontSize()"
+            >
+              <option value="" selected disabled>Font Size</option>
 
-            <option value="8px">8</option>
-            <option value="12px">12</option>
-            <option value="16px">16</option>
-            <option value="20px">20</option>
-            <option value="24px">24</option>
-            <option value="28px">28</option>
-            <option value="36px">36</option>
-          </select>
+              <option value="8px">8</option>
+              <option value="12px">12</option>
+              <option value="16px">16</option>
+              <option value="20px">20</option>
+              <option value="24px">24</option>
+              <option value="28px">28</option>
+              <option value="36px">36</option>
+            </select>
 
-          <select class="form-select me-2" [(ngModel)]="fontFamily">
-            <option value="" selected disabled>Font Family</option>
-            <option value="cursive">Cursive</option>
-            <option value="Arial">Arial</option>
-            <option value="sans-serif">Sans-Serif</option>
-            <option value="Helvetica">Helvetica</option>
-            <option value="Courier New">Courier New</option>
-            <option value="Arial Black">Arial Black</option>
-            <option value="Open Sans">Open Sans</option>
-            <option value="Gill Sans">Gill Sans</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Monospace">Monospace</option>
-            <option value="Monaco">Monaco</option>
-            <option value="Brush Script">Brush Script</option>
-            <option value="copperplate">Copperplate</option>
-          </select>
-        </div>
+            <select
+              class="form-select me-2"
+              [(ngModel)]="fontFamily"
+              (change)="handleFontFamily()"
+            >
+              <option value="" selected disabled>Font Family</option>
+              <option value="cursive">Cursive</option>
+              <option value="Arial">Arial</option>
+              <option value="sans-serif">Sans-Serif</option>
+              <option value="Helvetica">Helvetica</option>
+              <option value="Courier New">Courier New</option>
+              <option value="Arial Black">Arial Black</option>
+              <option value="Open Sans">Open Sans</option>
+              <option value="Gill Sans">Gill Sans</option>
+              <option value="Times New Roman">Times New Roman</option>
+              <option value="Monospace">Monospace</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Brush Script">Brush Script</option>
+              <option value="copperplate">Copperplate</option>
+            </select>
+          </div>
 
-        <div class="d-flex hide-on-print">
-          <button
-            class="btn fw-bold fs-4"
-            [class.active]="isBold"
-            (click)="handleToggleBold()"
-          >
-            B
-          </button>
-          <button
-            class="btn fw-bold fs-4"
-            [class.active]="isItalic"
-            (click)="handleToggleItalic()"
-          >
-            I
-          </button>
-          <button
-            class="btn fw-bold fs-4"
-            [class.active]="isUnderLine"
-            (click)="handleToggleUnderLine()"
-          >
-            U
-          </button>
-          <button class="btn fw-bold fs-4" (click)="resetData()">
-            <i class="fa-solid fa-arrow-rotate-left"></i>
-          </button>
-          <button
-            class="btn fw-bold fs-4"
-            [cdkCopyToClipboard]="textValue"
-            (cdkCopyToClipboardCopied)="copyToClipBoard()"
-          >
-            📋
-          </button>
-
-          <div class="d-flex flex-wrap align-items-center">
-            <button class="btn btn-warning me-2 mb-2" (click)="printNotes()">
-              Print
+          <div class="d-flex hide-on-print">
+            <button
+              class="btn fw-medium fs-5"
+              [class.active]="isBold"
+              (click)="handleToggleBold()"
+            >
+              B
             </button>
-            <button class="btn btn-primary mb-2" (click)="saveNotes()">
-              <i class="fa-solid fa-download"></i><span class="ms-1">Save</span>
+            <button
+              class="btn fw-medium fs-5"
+              [class.active]="isItalic"
+              (click)="handleToggleItalic()"
+            >
+              I
             </button>
+            <button
+              class="btn fw-medium fs-5"
+              [class.active]="isUnderLine"
+              (click)="handleToggleUnderLine()"
+            >
+              U
+            </button>
+            <button class="btn fw-bold fs-4" (click)="resetData()">
+              <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+            <button
+              class="btn fw-bold fs-4"
+              [cdkCopyToClipboard]="textValue"
+              (cdkCopyToClipboardCopied)="copyToClipBoard()"
+            >
+              📋
+            </button>
+
+            <div class="d-flex flex-wrap align-items-center">
+              <button class="btn btn-warning me-2 mb-2" (click)="printNotes()">
+                Print
+              </button>
+              <button class="btn btn-primary mb-2" (click)="saveNotes()">
+                <i class="fa-solid fa-download"></i
+                ><span class="ms-1">Save</span>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="text-center">
-        <textarea
-          class="form-control"
-          [placeholder]="placeHolder"
-          autofocus
-          [(ngModel)]="textValue"
-          [ngStyle]="{
-            fontSize: fontSize,
-            fontWeight: isBold ? 'bold' : 'normal',
-            fontStyle: isItalic ? 'italic' : 'normal',
-            textDecoration: isUnderLine ? 'underline' : 'none',
-            fontFamily: fontFamily || 'Arial',
-
-            height: '90vh',
-            resize: 'vertical'
-          }"
-        ></textarea>
+        <div class="text-center">
+          <textarea
+            class="form-control"
+            [placeholder]="placeHolder"
+            autofocus
+            [(ngModel)]="textValue"
+            [ngStyle]="{
+              fontSize: fontSize,
+              fontWeight: isBold ? 'bold' : 'normal',
+              fontStyle: isItalic ? 'italic' : 'normal',
+              textDecoration: isUnderLine ? 'underline' : 'none',
+              fontFamily: fontFamily || 'Arial',
+              height: '90vh',
+              resize: 'vertical',
+            }"
+            (input)="handleInputChange()"
+          ></textarea>
+        </div>
       </div>
     </div>
   </div>
